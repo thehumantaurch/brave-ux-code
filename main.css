@@ -1,29 +1,89 @@
-font-family: 'Roboto Condensed', sans-serif;
+body {
+  background-color: #D9DFE3;
+  color: #8BA2AD;
+  font-family: 'Roboto Condensed', sans-serif;
+  margin-left: 0;
+}
 
-header {
+header table {
+  height: 60px;
+  position: fixed;
+  top: 0px;
+  z-index: 10000;
+  border: 0 none;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+header table td {
+  padding-left: 25px;
   color: #FCFCFC;
   background-color: #801E7C;
 }
 
-header menu {
+header table td:nth-child(2) {
   color: #FCFCFC;
   background-color: #52197E;
 }
 
-body {
+#main {
+  padding-left: 25px;
+  padding-top: 50px;
   background-color: #E7EBED;
   color: #566D77;
+  width: 99%;
+  padding-bottom: 25px;
+  padding-right: 50px;
+  position: fixed;
 }
 
-#login {
-  background-color: #52197E;
-  color: ;
+#main table {
+  width: 95%;
 }
 
-body form {
-  color: #8BA2AD;;
+#main > table > tbody > tr:nth-child(1) > td > input[type="text"] {
+  width: 99%;
+  margin-bottom: 10px;
 }
-footer {
-  background-color: #D9DFE3;
+
+#main > table > tbody > tr:nth-child(2) > td > input[type="text"] {
+  width: 99%;
+  margin-bottom: 10px;
+}
+
+#main > table > tbody > tr:nth-child(3) > td:nth-child(1) {
+  width: 50%;
+}
+
+#main > table > tbody > tr:nth-child(3) > td:nth-child(2) {
+  text-align: right;
+}
+
+
+input[type=text] {
+  font-family: 'Roboto Condensed', sans-serif;
+  border-radius: 3px;
+  border: 0 none;
   color: #8BA2AD;
+  font-size: 1.1em;
+  padding: 10px;
+}
+
+input[type=submit] {
+  border: 0 none;
+  color: #FCFCFC;
+  background-color: #52197E;
+  border-radius: 3px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1em;
+  padding: 10px 20px 10px 20px
+}
+
+footer {
+  padding-left: 25px;
+  padding-bottom: 25px;
+  position: fixed;
+  bottom: 0px;
+  z-index: 10000;
+  width: 100%;
 }
