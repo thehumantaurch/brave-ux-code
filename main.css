@@ -1,0 +1,29 @@
+font-family: 'Roboto Condensed', sans-serif;
+
+header {
+  color: #FCFCFC;
+  background-color: #801E7C;
+}
+
+header menu {
+  color: #FCFCFC;
+  background-color: #52197E;
+}
+
+body {
+  background-color: #E7EBED;
+  color: #566D77;
+}
+
+#login {
+  background-color: #52197E;
+  color: ;
+}
+
+body form {
+  color: #8BA2AD;;
+}
+footer {
+  background-color: #D9DFE3;
+  color: #8BA2AD;
+}
