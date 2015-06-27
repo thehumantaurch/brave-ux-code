@@ -55,7 +55,7 @@ body {
 }
 
 body > header {
-  z-index: 300;
+  z-index: 1000;
   position: fixed;
   top: 0px;
   border: 0 none;
@@ -92,7 +92,6 @@ body > header > p {
   width: 100%;
   background-color: red;
   color: #FCFCFC;
-  z-index: 99;
   display: none;
   padding: 25px;
 }
@@ -104,7 +103,6 @@ body > header > p {
   width: 100%;
   padding-bottom: 25px;
   position: fixed;
-  z-index: 98;
 }
 
 #main > p {
@@ -178,14 +176,14 @@ footer {
   padding-bottom: 25px;
   position: fixed;
   bottom: 0px;
-  z-index: 100;
+  z-index: 1000;
   width: 100%;
 }
 
 .menu {
   padding-top: 70px;
   position: fixed;
-  z-index: 200;
+  z-index: -200;
   color: #FCFCFC;
   background-color: #52197E;
   transition: transform 0.3s;
