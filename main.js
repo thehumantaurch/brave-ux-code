@@ -1,17 +1,18 @@
 function validateLogin () {
   var username = document.loginForm.username
   var password = document.loginForm.password
+  var error = document.querySelector('#error')
   var pass_format = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
   if (username.value == "") {
     username.style.border = "2px solid red"
-    document.querySelector('#error').style.display = "block"
+    error.style.display = "block"
     return false;
   } else if (pass_format.test(password.value) != true) {
     password.style.border = "2px solid red"
-    document.querySelector('#error').style.display = "block"
+    error.style.display = "block"
     return false;
   } else {
-    document.querySelector('#error').style.display = "none"
+    error.style.display = "none"
     return true;
   }
 }
