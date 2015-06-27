@@ -266,6 +266,14 @@ body.has-active-menu {
   background-color: #52197E;
 }
 
+.menu--slide-right .menu__close {
+  display: block;
+  text-decoration: none;
+  padding: 12px 24px;
+  color: #FCFCFC;
+  background-color: #52197E;
+}
+
 .menu--slide-right .menu__link2 {
   display: block;
   text-decoration: none;

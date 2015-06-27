@@ -68,8 +68,8 @@ document.querySelector('#main > form > p:nth-child(2) > i').addEventListener('cl
    * Menu Options.
    */
   Menu.prototype.options = {
-    type: 'slide-right',             // The menu type
-    menuOpenerClass: '#menu-click',   // The menu opener class names (i.e. the buttons)
+    type: 'slide-right',
+    menuOpenerClass: '#menu-click'
   };
 
   /**
@@ -78,7 +78,7 @@ document.querySelector('#main > form > p:nth-child(2) > i').addEventListener('cl
   Menu.prototype._init = function() {
     this.body = document.body;
     this.menu = document.querySelector('#menu--' + this.options.type);
-    this.closeBtn = document.querySelector('#menu-click');
+    this.closeBtn = document.querySelector('#menu--slide-right > ul > li:nth-child(1) > a');
     this.menuOpeners = document.querySelectorAll(this.options.menuOpenerClass);
     this._initEvents();
   };
