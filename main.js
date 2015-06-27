@@ -1,13 +1,13 @@
 function validateLogin () {
-  var username = document.loginForm.username.value
-  var password = document.loginForm.password.value
+  var username = document.loginForm.username
+  var password = document.loginForm.password
   var pass_format = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
-  if (username == "") {
-    document.loginForm.username.style.border = "2px solid red"
+  if (username.value == "") {
+    username.style.border = "2px solid red"
     document.querySelector('#error').style.display = "block"
     return false;
-  } else if (pass_format.test(password) != true) {
-    document.loginForm.password.style.border = "2px solid red"
+  } else if (pass_format.test(password.value) != true) {
+    password.style.border = "2px solid red"
     document.querySelector('#error').style.display = "block"
     return false;
   } else {
