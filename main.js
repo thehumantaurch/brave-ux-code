@@ -1,28 +1,28 @@
 function validateLogin () {
-  var username = document.loginForm.username
-  var password = document.loginForm.password
-  var error = document.querySelector('#error')
+  var username = document.loginForm.username;
+  var password = document.loginForm.password;
+  var error = document.querySelector('#error');
   var pass_format = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
   if (username.value == "") {
     username.style.border = "2px solid red"
     error.style.display = "block"
     return false;
   } else if (pass_format.test(password.value) != true) {
-    password.style.border = "2px solid red"
-    error.style.display = "block"
+    password.style.border = "2px solid red";
+    error.style.display = "block";
     return false;
   } else {
-    error.style.display = "none"
+    error.style.display = "none";
     return true;
   }
 }
 
 function togglePass() {
-  var passField = document.querySelector('#main > form > p:nth-child(2) > span > input')
+  var passField = document.querySelector('#main > form > p:nth-child(2) > span > input');
   if (passField.type !== 'password') {
-      passField.type = 'password'
+      passField.type = 'password';
   } else {
-    passField.type = 'text'
+    passField.type = 'text';
   }
 }
 

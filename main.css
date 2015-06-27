@@ -55,33 +55,37 @@ body {
 }
 
 body > header {
+  z-index: 300;
   position: fixed;
   top: 0px;
-  z-index: 100;
   border: 0 none;
   width: 100%;
 }
 
-body > header > p > span {
-  height: 60px;
+body > header > p {
+  border-collapse: collapse;
+  width: 100%;
+  color: #FCFCFC;
+  background-color: #801E7C;
   float: left;
 }
 
 #title {
-  border-collapse: collapse;
-  width: 60%;
-  color: #FCFCFC;
-  background-color: #801E7C;
+  padding: 25px;
+  float: left;
 }
 
 #menu-click {
-  width: 40%;
+  top: 0px;
+  float: right;
+  width: 100px;
   color: #FCFCFC;
   background-color: #52197E;
+  padding: 25px;
 }
 
 #menu-click > i {
-  text-align: right;
+  padding-left: 40px;
 }
 
 #error {
@@ -90,32 +94,39 @@ body > header > p > span {
   color: #FCFCFC;
   z-index: 99;
   display: none;
+  padding: 25px;
 }
 
 #main {
   padding-top: 120px;
   background-color: #E7EBED;
   color: #566D77;
-  width: 99%;
+  width: 100%;
   padding-bottom: 25px;
-  padding-right: 50px;
   position: fixed;
   z-index: 98;
 }
 
+#main > p {
+  margin-left: 25px;
+}
 #main h1 {
+  padding-top: 25px;
+  padding-bottom: 15px;
   font-size: 2em;
+  margin-left: 25px;
 }
 
 #main > form > p:nth-child(1) > span > input {
-  width: 90%;
+  width: 80%;
   margin-bottom: 10px;
-  margin-right: 25px;
+  margin-left: 25px;
 }
 
 #main > form > p:nth-child(2) > span > input {
-  width: 90%;
+  width: 80%;
   margin-bottom: 10px;
+  margin-left: 25px;
 }
 
 #main > form > p:nth-child(2) > i {
@@ -125,7 +136,8 @@ body > header > p > span {
 
 #main > form > p:nth-child(3) > span:nth-child(1) {
   float: left;
-  width: 90%;
+  width: 76%;
+  margin-left: 25px;
 }
 
 #main > form > p:nth-child(3) > span:nth-child(2) {
@@ -171,7 +183,7 @@ footer {
 }
 
 .menu {
-  padding-top: 60px;
+  padding-top: 70px;
   position: fixed;
   z-index: 200;
   color: #FCFCFC;
@@ -184,7 +196,6 @@ footer {
   margin: 0;
   padding: 0;
   height: 60px;
-  padding-left: 25px;
 }
 
 /**
@@ -193,7 +204,7 @@ footer {
 .menu__close {
   color: #FCFCFC;
   background-color: #52197E;
-  font-size: 14px;
+  font-size: 1em;
   border: none;
   box-shadow: none;
   border-radius: none;
@@ -230,7 +241,7 @@ body.has-active-menu {
 
 @media all and (min-width: 320px) {
   .menu--slide-right {
-    width: 300px;
+    width: 150px;
   }
 }
 
@@ -255,6 +266,14 @@ body.has-active-menu {
   padding: 12px 24px;
   color: #FCFCFC;
   background-color: #52197E;
+}
+
+.menu--slide-right .menu__link2 {
+  display: block;
+  text-decoration: none;
+  padding: 12px 24px;
+  color: #FCFCFC;
+  background-color: #3C145A;
 }
 
 .menu--slide-right .menu__close {
