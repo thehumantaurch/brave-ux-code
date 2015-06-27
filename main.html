@@ -2,59 +2,70 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
-<!--     <meta name="viewport" content="width=device-width, initial-scale=1.0">
- -->    <link rel="stylesheet" type="text/css" href="main.css">
-    <script type="text/javascript" src="main.js"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
     <title>Brave UX App</title>
   </head>
 
   <body>
     <header>
-      <table>
-        <tr>
-          <td>The Brave UX App</td>
-          <td>Menu</td>
-        </tr>
-      </table>
-<!--       <nav id="menu">
-        <ul class="menu-items">
-          <li class="menu_light">Dashboard</li>
-          <li class="menu_light">My Profile</li>
-          <li class="menu_light">Settings</li>
-          <li class="menu_dark">Help</li>
-          <li class="menu_dark">About</li>
-          <li class="menu_light">Logout</li>
+      <p>
+        <span id="title">The Brave UX App</span>
+        <span id="menu-click">Menu<i class="fa fa-bars" onclick="return togglePass()"></i></span>
+      </p>
+      <p>
+        <span id="error">Username or password wasn't recognized.</span>
+      </p>
+      <nav id="menu--slide-right" class="menu menu--slide-right">
+        <ul class="menu__items">
+          <li class="menu__item"><a href="#" class="menu__link">Dashboard</a></li>
+          <li class="menu__item"><a href="#" class="menu__link">My Profile</a></li>
+          <li class="menu__item"><a href="#" class="menu__link">Settings</a></li>
+          <li class="menu__item"><a href="#" class="menu__link">Help</a></li>
+          <li class="menu__item"><a href="#" class="menu__link">About</a></li>
+          <li class="menu__item"><a href="#" class="menu__link">Logout<a></li>
         </ul>
-      </nav> -->
+      </nav>
     </header>
-
     <div id="main">
       <p>Do NOT bookmark this page.</p>
-      <h2>Login</h2>
+      <h1>Login</h1>
 
-      <table>
-        <form method="post" name="loginForm" onsubmit="return validateLogin()">
-          <tbody>
-            <tr>
-              <td colspan="2"><input type="text" name="username" placeholder="Username"></td>
-            </tr>
-            <tr>
-              <td colspan="2"><input type="text" name="password" placeholder="Password"></td>
-            </tr>
+      <form method="post" name="loginForm" onsubmit="return validateLogin()">
+        <p>
+          <span><input type="text" name="username" class="form-user" placeholder="Username"></span>
+        </p>
+        <p>
+          <span><input type="password" name="password" class="form-pass" placeholder="Password"></span>
+          <i class="fa fa-eye"></i>
+        </p>
+        <p>
+          <span><input type="submit" name="login" value="Login"></span>
+          <span>Need help?</span>
+        </p>
 
-            <tr>
-              <td colspan="1"><input type="submit" name="login" value="Login"></td>
-              <td colspan="1">Need help?</td>
-            </tr>
-          </tbody>
-        </form>
-      </table>
+      </form>
     </div>
 
     <footer>
       Powered by Brave UX
     </footer>
+
+    <script type="text/javascript" src="main.js"></script>
+    <script>
+    var slideRight = new Menu({
+      type: 'slide-right',
+      menuOpenerClass: '#menu-click',
+    });
+    var slideRightBtn = document.querySelector('#menu-click');
+
+    slideRightBtn.addEventListener('click', function(e) {
+      e.preventDefault;
+      slideRight.open();
+    });
+    </script>
 
   </body>
 </html>

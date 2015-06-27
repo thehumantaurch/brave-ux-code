@@ -1,66 +1,148 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* End of Reset*/
+
 body {
   background-color: #D9DFE3;
   color: #8BA2AD;
   font-family: 'Roboto Condensed', sans-serif;
-  margin-left: 0;
 }
 
-header table {
-  height: 60px;
+body > header {
   position: fixed;
   top: 0px;
-  z-index: 10000;
+  z-index: 100;
   border: 0 none;
-  border-collapse: collapse;
   width: 100%;
 }
 
-header table td {
-  padding-left: 25px;
+body > header > p > span {
+  height: 60px;
+  float: left;
+}
+
+#title {
+  border-collapse: collapse;
+  width: 60%;
   color: #FCFCFC;
   background-color: #801E7C;
 }
 
-header table td:nth-child(2) {
+#menu-click {
+  width: 40%;
   color: #FCFCFC;
   background-color: #52197E;
 }
 
+#menu-click > i {
+  text-align: right;
+}
+
+#error {
+  width: 100%;
+  background-color: red;
+  color: #FCFCFC;
+  z-index: 99;
+  display: none;
+}
+
 #main {
-  padding-left: 25px;
-  padding-top: 50px;
+  padding-top: 120px;
   background-color: #E7EBED;
   color: #566D77;
   width: 99%;
   padding-bottom: 25px;
   padding-right: 50px;
   position: fixed;
+  z-index: 98;
 }
 
-#main table {
-  width: 95%;
+#main h1 {
+  font-size: 2em;
 }
 
-#main > table > tbody > tr:nth-child(1) > td > input[type="text"] {
-  width: 99%;
+#main > form > p:nth-child(1) > span > input {
+  width: 90%;
+  margin-bottom: 10px;
+  margin-right: 25px;
+}
+
+#main > form > p:nth-child(2) > span > input {
+  width: 90%;
   margin-bottom: 10px;
 }
 
-#main > table > tbody > tr:nth-child(2) > td > input[type="text"] {
-  width: 99%;
-  margin-bottom: 10px;
+#main > form > p:nth-child(2) > i {
+  color: #8BA2AD;
+  margin-left: -25px;
 }
 
-#main > table > tbody > tr:nth-child(3) > td:nth-child(1) {
-  width: 50%;
+#main > form > p:nth-child(3) > span:nth-child(1) {
+  float: left;
+  width: 90%;
 }
 
-#main > table > tbody > tr:nth-child(3) > td:nth-child(2) {
+#main > form > p:nth-child(3) > span:nth-child(2) {
   text-align: right;
 }
 
 
 input[type=text] {
+  font-family: 'Roboto Condensed', sans-serif;
+  border-radius: 3px;
+  border: 0 none;
+  color: #8BA2AD;
+  font-size: 1.1em;
+  padding: 10px;
+}
+
+input[type=password] {
   font-family: 'Roboto Condensed', sans-serif;
   border-radius: 3px;
   border: 0 none;
@@ -84,6 +166,115 @@ footer {
   padding-bottom: 25px;
   position: fixed;
   bottom: 0px;
-  z-index: 10000;
+  z-index: 100;
   width: 100%;
+}
+
+.menu {
+  padding-top: 60px;
+  position: fixed;
+  z-index: 200;
+  color: #FCFCFC;
+  background-color: #52197E;
+  transition: transform 0.3s;
+}
+
+.menu__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 60px;
+  padding-left: 25px;
+}
+
+/**
+ * Close button resets.
+ */
+.menu__close {
+  color: #FCFCFC;
+  background-color: #52197E;
+  font-size: 14px;
+  border: none;
+  box-shadow: none;
+  border-radius: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+/**
+ * Close button resets.
+ */
+.menu__close:focus {
+  outline: none;
+}
+
+/**
+ * Body states.
+ *
+ * When a menu is active, we want to hide the overflows on the body to prevent
+ * awkward document scrolling.
+ */
+body.has-active-menu {
+  overflow: hidden;
+}
+
+/* menu stuff */
+
+.menu--slide-right {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+@media all and (min-width: 320px) {
+  .menu--slide-right {
+    width: 300px;
+  }
+}
+
+.menu--slide-right .menu__item {
+  display: block;
+  text-align: left;
+  color: #FCFCFC;
+  background-color: #52197E;
+}
+
+.menu--slide-right .menu__item:first-child {
+  border-top: none;
+}
+
+.menu--slide-right .menu__item:last-child {
+  border-bottom: none;
+}
+
+.menu--slide-right .menu__link {
+  display: block;
+  text-decoration: none;
+  padding: 12px 24px;
+  color: #FCFCFC;
+  background-color: #52197E;
+}
+
+.menu--slide-right .menu__close {
+  display: block;
+  padding: 12px 24px;
+  width: 100%;
+}
+
+.menu--slide-right {
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+}
+
+@media all and (min-width: 320px) {
+  .menu--slide-right {
+    transform: translateX(300px);
+  }
+}
+
+.menu--slide-right.is-active {
+  transform: translateX(0);
 }
